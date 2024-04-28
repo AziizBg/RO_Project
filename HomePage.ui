@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>950</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">padding:10px;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <spacer name="verticalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <italic>true</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(20, 51, 82);</string>
+      </property>
+      <property name="text">
+       <string>Application de Recherche Opérationnelle</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalLabelSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="introVLayout">
+      <item>
+       <widget class="QLabel" name="introLabel">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <weight>75</weight>
+          <italic>false</italic>
+          <bold>true</bold>
+          <strikeout>false</strikeout>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #6892ad;</string>
+        </property>
+        <property name="text">
+         <string>Introduction :</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="introDesc">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #262626;margin-left:10px;</string>
+        </property>
+        <property name="text">
+         <string>Bienvenue dans notre application dédiée à la Recherche Opérationnelle, un outil conçu pour résoudre des problèmes complexes à l'aide d'algorithmes avancés. Nous sommes enchantés de vous présenter notre travail en tant que membres du groupe de projet : Rim Jbeli, Ines Samet, Sara Drine et Mohamed Aziz Ben Ghorbel. Plongez dans les défis d'optimisation que nous avons abordés et découvrez les solutions que nous avons élaborées ensemble.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QSplitter" name="pb1_splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="left_widget">
+       <layout class="QVBoxLayout" name="pb1_left_layout">
+        <item>
+         <widget class="QLabel" name="pb1_title">
+          <property name="font">
+           <font>
+            <pointsize>15</pointsize>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #6892ad;</string>
+          </property>
+          <property name="text">
+           <string>Problème 1 : Plus court chemin avec contraintes d'horaires</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="pb1_desc">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #262626;margin-left:10px;</string>
+          </property>
+          <property name="text">
+           <string>Le problème du plus court chemin est un problème classique de la recherche opérationnelle. Il consiste à trouver le chemin le plus court entre deux points d'un graphe pondéré. Dans notre cas, nous avons ajouté des contraintes d'horaires pour rendre le problème plus réaliste.</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="right_widget">
+       <layout class="QVBoxLayout" name="pb1_right_layout">
+        <item>
+         <widget class="QPushButton" name="pb1Button">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+                        QPushButton {
+                            background-color: #4a9fab;
+                            border: none;
+                            color: white;
+                            padding: 10px ;
+                            margin: 10px;
+                            height: 35px;
+                        }
+                        QPushButton:hover {
+                            background-color: #3e858f;
+                        }
+                    </string>
+          </property>
+          <property name="text">
+           <string>Tester</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_6">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QSplitter" name="pb2_splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="left_widget">
+       <layout class="QVBoxLayout" name="pb2_left_layout">
+        <item>
+         <widget class="QLabel" name="pb2_title">
+          <property name="font">
+           <font>
+            <pointsize>15</pointsize>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #6892ad;</string>
+          </property>
+          <property name="text">
+           <string>Problème 2 : Problème de sac à dos</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="pb2_desc">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: #262626;margin-left:10px;</string>
+          </property>
+          <property name="text">
+           <string>Le problème du sac à dos est un problème classique de l'optimisation combinatoire. Il consiste à remplir un sac à dos avec des objets de différentes valeurs et poids, de manière à maximiser la valeur totale des objets tout en respectant la capacité du sac. Ce problème est souvent utilisé pour illustrer les concepts de programmation dynamique et de résolution de problèmes d'optimisation.</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="right_widget">
+       <layout class="QVBoxLayout" name="pb2_right_layout">
+        <item>
+         <widget class="QPushButton" name="pb2Button">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+                           QPushButton {
+                               background-color: #4a9fab;
+                               border: none;
+                               color: white;
+                               padding: 10px ;
+                               margin: 10px;
+                               height: 35px;
+                           }
+                           QPushButton:hover {
+                               background-color: #3e858f;
+                           }
+                       </string>
+          </property>
+          <property name="text">
+           <string>Tester</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_5">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>929</width>
+     <height>46</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
