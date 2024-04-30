@@ -10,13 +10,7 @@
     <height>950</height>
    </rect>
   </property>
-  <property name="styleSheet">
-    <string notr="true">background-color:#DCE4F1;padding:10px;</string>
-   </property>
   <widget class="QWidget" name="centralwidget">
-   <property name="styleSheet">
-    <string/>
-   </property>
    <layout class="QVBoxLayout" name="main_layout">
     <property name="leftMargin">
      <number>20</number>
@@ -34,67 +28,67 @@
      <widget class="QPushButton" name="returnHome">
       <property name="maximumSize">
        <size>
-        <width>90</width>
-        <height>60</height>
+        <width>100</width>
+        <height>70</height>
        </size>
       </property>
       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">
-                          QPushButton {
-                              background-color: #4a9fab;
-                              border: none;
-                              color: white;
-                              padding: 10px ;
-                              margin: 10px;
-                              height: 35px;
-                          }
-                          QPushButton:hover {
-                              background-color: #3e858f;
-                          }
-                      </string>
-       </property>
-       <property name="text">
-        <string>Home</string>
-       </property>
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+                        QPushButton {
+                            background-color: #4a9fab;
+                            border: none;
+                            color: white;
+                            padding: 10px ;
+                            margin: 10px;
+                            height: 35px;
+                        }
+                        QPushButton:hover {
+                            background-color: #3e858f;
+                        }
+                    </string>
+      </property>
+      <property name="text">
+       <string>Home</string>
+      </property>
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <property name="bottomMargin">
-       <number>10</number>
+     <widget class="QLabel" name="top_title">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>150</height>
+       </size>
       </property>
-      <item>
-       <widget class="QLabel" name="top_title">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>150</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>16</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Shortest Path Optimization</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+                                QLabel {
+                                color: #0b2b4f;
+                                }
+                            </string>
+      </property>
+      <property name="text">
+       <string>Shortest Path Optimization</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QSplitter" name="splitter">
@@ -107,6 +101,18 @@
          <layout class="QHBoxLayout" name="node_layout">
           <item>
            <widget class="QLabel" name="node_input_title">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+            </property>
             <property name="text">
              <string>Node Input</string>
             </property>
@@ -114,6 +120,29 @@
           </item>
           <item>
            <widget class="QPushButton" name="add_node_button">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QPushButton {
+                                                        background-color: #4a9fab;
+                                                        border: none;
+                                                        color: white;
+                                                        padding: 5px ;
+                                                        margin: 10px;
+                                                        height: 20px;
+                                                        }
+                                                        QPushButton:hover {
+                                                        background-color: #3e858f;
+                                                        }
+                                                    </string>
+            </property>
             <property name="text">
              <string>Add Node</string>
             </property>
@@ -135,11 +164,20 @@
         </item>
         <item>
          <layout class="QHBoxLayout" name="edge_layout">
-          <property name="topMargin">
-           <number>15</number>
-          </property>
           <item>
            <widget class="QLabel" name="edge_input_title">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+            </property>
             <property name="text">
              <string>Edge Input</string>
             </property>
@@ -147,6 +185,29 @@
           </item>
           <item>
            <widget class="QPushButton" name="add_edge_button">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QPushButton {
+                                                        background-color: #4a9fab;
+                                                        border: none;
+                                                        color: white;
+                                                        padding: 5px;
+                                                        margin: 10px;
+                                                        height: 20px;
+                                                        }
+                                                        QPushButton:hover {
+                                                        background-color: #3e858f;
+                                                        }
+                                                    </string>
+            </property>
             <property name="text">
              <string>Add Edge</string>
             </property>
@@ -177,6 +238,18 @@
           </property>
           <item>
            <widget class="QLabel" name="node_selection_label">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+            </property>
             <property name="text">
              <string>Node Selection</string>
             </property>
@@ -191,6 +264,18 @@
           </property>
           <item>
            <widget class="QLabel" name="start_node_label">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #262626;
+                                                        }
+                                                    </string>
+            </property>
             <property name="text">
              <string>Start Node:</string>
             </property>
@@ -200,8 +285,8 @@
            <widget class="QComboBox" name="start_node_combo">
             <property name="maximumSize">
              <size>
-              <width>200</width>
-              <height>50</height>
+              <width>300</width>
+              <height>100</height>
              </size>
             </property>
            </widget>
@@ -212,6 +297,18 @@
          <layout class="QHBoxLayout" name="node_selection_layout">
           <item>
            <widget class="QLabel" name="end_node_label">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #262626;
+                                                        }
+                                                    </string>
+            </property>
             <property name="text">
              <string>End Node:</string>
             </property>
@@ -221,7 +318,7 @@
            <widget class="QComboBox" name="end_node_combo">
             <property name="maximumSize">
              <size>
-              <width>200</width>
+              <width>300</width>
               <height>50</height>
              </size>
             </property>
@@ -239,6 +336,29 @@
           </property>
           <item>
            <widget class="QPushButton" name="calculate_button">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QPushButton {
+                                                        background-color: #4a9fab;
+                                                        border: none;
+                                                        color: white;
+                                                        padding: 5px ;
+                                                        margin: 5px;
+                                                        height: 35px;
+                                                        }
+                                                        QPushButton:hover {
+                                                        background-color: #3e858f;
+                                                        }
+                                                    </string>
+            </property>
             <property name="text">
              <string>Calculate Shortest Path</string>
             </property>
@@ -246,6 +366,29 @@
           </item>
           <item>
            <widget class="QPushButton" name="clear_button">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QPushButton {
+                                                        background-color: #4a9fab;
+                                                        border: none;
+                                                        color: white;
+                                                        padding: 5px ;
+                                                        margin: 5px;
+                                                        height: 35px;
+                                                        }
+                                                        QPushButton:hover {
+                                                        background-color: #3e858f;
+                                                        }
+                                                    </string>
+            </property>
             <property name="text">
              <string>Clear</string>
             </property>
@@ -253,8 +396,142 @@
           </item>
          </layout>
         </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="right_widget">
+       <layout class="QVBoxLayout" name="right_layout">
+        <item>
+         <layout class="QVBoxLayout" name="remark_layout">
+          <item>
+           <widget class="QLabel" name="input_constraint">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>Input Constraint</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="remark_layout">
+          <item>
+           <widget class="QLabel" name="constraint1_label">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #262626;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>You can't add the same node or edge twice</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="remark_layout">
+          <item>
+           <widget class="QLabel" name="start_node_label">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #262626;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>The start and end nodes should be different</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="remark_layout">
+          <item>
+           <widget class="QLabel" name="start_node_label">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #262626;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>You can't add the inverse of an edge</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="graph_layout">
+          <item>
+           <widget class="QLabel" name="graph_title">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>Graph Visualization</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGraphicsView" name="graphicsView"/>
+        </item>
         <item>
          <widget class="QLabel" name="result_info_label">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+                                                QLabel {
+                                                color: #262626;
+                                                }
+                                            </string>
+          </property>
           <property name="text">
            <string>Result Information:</string>
           </property>
@@ -262,19 +539,25 @@
         </item>
         <item>
          <widget class="QTextEdit" name="result_info_display">
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAsNeeded</enum>
-          </property>
           <property name="readOnly">
            <bool>true</bool>
-          </property>
-          <property name="fixedHeight" stdset="0">
-           <number>50</number>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QLabel" name="error_label">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+                                                QLabel {
+                                                color: #262626;
+                                                }
+                                            </string>
+          </property>
           <property name="text">
            <string>Error Messages:</string>
           </property>
@@ -289,61 +572,9 @@
            <bool>true</bool>
           </property>
           <property name="fixedHeight" stdset="0">
-           <number>50</number>
+           <number>30</number>
           </property>
          </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="right_widget">
-       <layout class="QVBoxLayout" name="right_layout">
-        <item>
-         <layout class="QVBoxLayout" name="plane_layout">
-          <item>
-           <widget class="QLabel" name="plane_title">
-            <property name="text">
-             <string>Content</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTextEdit" name="plane_display">
-            <property name="verticalScrollBarPolicy">
-             <enum>Qt::ScrollBarAsNeeded</enum>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="graph_layout">
-          <item>
-           <widget class="QLabel" name="graph_title">
-            <property name="text">
-             <string>Graph Visualization</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <spacer>
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Expanding</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>100</height>
-           </size>
-          </property>
-         </spacer>
         </item>
        </layout>
       </widget>

@@ -6,48 +6,704 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>928</width>
-    <height>705</height>
+    <width>936</width>
+    <height>935</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Parameters Input</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QVBoxLayout" name="main_layout">
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <property name="rightMargin">
+     <number>20</number>
+    </property>
+    <property name="bottomMargin">
+     <number>20</number>
+    </property>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <widget class="QPushButton" name="returnHome">
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>70</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+                        QPushButton {
+                            background-color: #4a9fab;
+                            border: none;
+                            color: white;
+                            padding: 10px ;
+                            margin: 10px;
+                            height: 35px;
+                        }
+                        QPushButton:hover {
+                            background-color: #3e858f;
+                        }
+                    </string>
+      </property>
+      <property name="text">
+       <string>Home</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="top_title">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>150</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+                  QLabel {
+                  color: #0b2b4f;
+                  }
+              </string>
+      </property>
+      <property name="text">
+       <string>Farming Planning</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="leftPanel">
+       <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="node_input_title_2">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+          </property>
           <property name="text">
-           <string>TextLabel</string>
+           <string>Animal :</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinBox"/>
+         <widget class="QTableWidget" name="tableAdultAnimal">
+          <property name="styleSheet">
+           <string notr="true">gridline-color:#DCE4F1;
+selection-background-color: #DCE4F1;</string>
+          </property>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>First Production Age</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Last Sell Age</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Min Final Animals</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Max Final Animals</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Animal Yearly Income</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Birthrate</string>
+           </property>
+          </column>
+         </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QLabel" name="edge_input_title">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+          </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>Animal Needs :</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableAnimalNeeds">
+          <property name="styleSheet">
+           <string notr="true">gridline-color:#DCE4F1;
+selection-background-color: #DCE4F1;</string>
+          </property>
+          <row>
+           <property name="text">
+            <string>Adult</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Baby</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Land</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Labor</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Decay</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Initial Number</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Price</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Cost</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="node_selection_label">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+          </property>
+          <property name="text">
+           <string>Capacity : </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableCapacity">
+          <property name="styleSheet">
+           <string notr="true">gridline-color:#DCE4F1;
+        selection-background-color: #DCE4F1;</string>
+          </property>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Housing</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Land</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Labor</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="input_constraint">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+          </property>
+          <property name="text">
+           <string>Seeds :</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableSeeds">
+          <property name="styleSheet">
+           <string notr="true">gridline-color:#DCE4F1;
+     selection-background-color: #DCE4F1;</string>
+          </property>
+          <row>
+           <property name="text">
+            <string>Seed1</string>
+           </property>
+          </row>
+          <row>
+           <property name="text">
+            <string>Seed2</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Intake</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Labor</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Price</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Cost</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Land Cost</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="node_input_title">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>Lands</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="add_lands_button">
+            <property name="maximumSize">
+             <size>
+              <width>170</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QPushButton {
+                                                        background-color: #4a9fab;
+                                                        border: none;
+                                                        color: white;
+                                                        padding: 5px ;
+                                                        margin: 10px;
+                                                        height: 20px;
+                                                        }
+                                                        QPushButton:hover {
+                                                        background-color: #3e858f;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>Add Lands</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableLands">
+          <property name="styleSheet">
+           <string notr="true">gridline-color:#DCE4F1;
+selection-background-color: #DCE4F1;</string>
+          </property>
+          <row>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </row>
+          <column>
+           <property name="text">
+            <string>Seed1_Area</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Seed1_yield</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Number of Planning Years</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Payment for Each Additional Rented Breeding Space</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_3">
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Annual Cost of Regular Labor</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_2">
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Overtime Hours of Labor</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_4">
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QPushButton" name="pushButton_submit">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QPushButton {
+                                                        background-color: #4a9fab;
+                                                        border: none;
+                                                        color: white;
+                                                        padding: 5px ;
+                                                        margin: 5px;
+                                                        height: 35px;
+                                                        }
+                                                        QPushButton:hover {
+                                                        background-color: #3e858f;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>Calculate </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="clear_button_4">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QPushButton {
+                                                        background-color: #ff4151;
+                                                        border: none;
+                                                        color: white;
+                                                        padding: 5px ;
+                                                        margin: 5px;
+                                                        height: 35px;
+                                                        }
+                                                        QPushButton:hover {
+                                                        background-color: #f0505d;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>Clear</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_8"/>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_7"/>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_6"/>
-      </item>
-     </layout>
+      </widget>
+      <widget class="QWidget" name="right_widget">
+       <layout class="QVBoxLayout" name="right_layout">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="graph_title">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>Plans Visualization</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="outputText">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="input_constraint_2">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>Input Constraint</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
     </item>
    </layout>
   </widget>
