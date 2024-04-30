@@ -1,2 +1,0 @@
-
-            print(self.isFullScree

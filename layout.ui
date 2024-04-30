@@ -10,6 +10,9 @@
     <height>950</height>
    </rect>
   </property>
+  <property name="styleSheet">
+    <string notr="true">background-color:#DCE4F1;padding:10px;</string>
+   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string/>
