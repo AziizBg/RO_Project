@@ -242,7 +242,7 @@ class LayoutApp2(QMainWindow):
         loadUi(ui_file_path, self)  # Chargez le fichier UI directement
 
         # Connectez le bouton returnHome à la fonction de redirection avec l'indice 0
-        self.returnHome.clicked.connect(lambda: BaseWindow.redirect_to_layout(self,0))
+        # self.returnHome.clicked.connect(lambda: BaseWindow.redirect_to_layout(self,0))
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -253,8 +253,6 @@ if __name__ == "__main__":
     widget.addWidget(mainwindow)
     widget.addWidget(layout)
     widget.addWidget(layout2)
-    widget.setFixedWidth(1200)
-    widget.setFixedHeight(950)
     widget.setWindowTitle("RO Application")
-    widget.show()
+    widget.showMaximized()
     sys.exit(app.exec_())
