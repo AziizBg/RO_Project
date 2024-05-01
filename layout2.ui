@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>936</width>
-    <height>935</height>
+    <width>890</width>
+    <height>929</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,7 +28,7 @@
      <number>20</number>
     </property>
     <item>
-     <widget class="QPushButton" name="pb1Button">
+     <widget class="QPushButton" name="returnHome">
       <property name="maximumSize">
        <size>
         <width>100</width>
@@ -160,6 +160,36 @@ selection-background-color: #DCE4F1;</string>
             <string>Birthrate</string>
            </property>
           </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>50</string>
+           </property>
+          </item>
+          <item row="0" column="3">
+           <property name="text">
+            <string>175</string>
+           </property>
+          </item>
+          <item row="0" column="4">
+           <property name="text">
+            <string>370</string>
+           </property>
+          </item>
+          <item row="0" column="5">
+           <property name="text">
+            <string>1.1</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item>
@@ -227,6 +257,66 @@ selection-background-color: #DCE4F1;</string>
             <string>Cost</string>
            </property>
           </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>1.0</string>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>0.42</string>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>0.02</string>
+           </property>
+          </item>
+          <item row="0" column="3">
+           <property name="text">
+            <string>9.8</string>
+           </property>
+          </item>
+          <item row="0" column="4">
+           <property name="text">
+            <string>120</string>
+           </property>
+          </item>
+          <item row="0" column="5">
+           <property name="text">
+            <string>100</string>
+           </property>
+          </item>
+          <item row="1" column="0">
+           <property name="text">
+            <string>0.666</string>
+           </property>
+          </item>
+          <item row="1" column="1">
+           <property name="text">
+            <string>0.1</string>
+           </property>
+          </item>
+          <item row="1" column="2">
+           <property name="text">
+            <string>0.05</string>
+           </property>
+          </item>
+          <item row="1" column="3">
+           <property name="text">
+            <string>9.5</string>
+           </property>
+          </item>
+          <item row="1" column="4">
+           <property name="text">
+            <string>40</string>
+           </property>
+          </item>
+          <item row="1" column="5">
+           <property name="text">
+            <string>50</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item>
@@ -274,6 +364,21 @@ selection-background-color: #DCE4F1;</string>
             <string>Labor</string>
            </property>
           </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>130</string>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>200</string>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>55</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item>
@@ -313,6 +418,11 @@ selection-background-color: #DCE4F1;</string>
           </row>
           <column>
            <property name="text">
+            <string>yield</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
             <string>Intake</string>
            </property>
           </column>
@@ -336,6 +446,78 @@ selection-background-color: #DCE4F1;</string>
             <string>Land Cost</string>
            </property>
           </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="background">
+            <brush brushstyle="FDiagPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+           <property name="flags">
+            <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsUserCheckable</set>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>0.6</string>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>0.04</string>
+           </property>
+          </item>
+          <item row="0" column="3">
+           <property name="text">
+            <string>75</string>
+           </property>
+          </item>
+          <item row="0" column="4">
+           <property name="text">
+            <string>90</string>
+           </property>
+          </item>
+          <item row="0" column="5">
+           <property name="text">
+            <string>15</string>
+           </property>
+          </item>
+          <item row="1" column="0">
+           <property name="text">
+            <string>1.5</string>
+           </property>
+          </item>
+          <item row="1" column="1">
+           <property name="text">
+            <string>0.7</string>
+           </property>
+          </item>
+          <item row="1" column="2">
+           <property name="text">
+            <string>0.14</string>
+           </property>
+          </item>
+          <item row="1" column="3">
+           <property name="text">
+            <string>58</string>
+           </property>
+          </item>
+          <item row="1" column="4">
+           <property name="text">
+            <string>70</string>
+           </property>
+          </item>
+          <item row="1" column="5">
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
          </widget>
         </item>
         <item>
@@ -423,6 +605,24 @@ selection-background-color: #DCE4F1;</string>
             <string/>
            </property>
           </column>
+          <item row="0" column="0">
+           <property name="text">
+            <string>20</string>
+           </property>
+          </item>
+          <item row="0" column="1">
+           <property name="text">
+            <string>1.1</string>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="flags">
+            <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsUserCheckable</set>
+           </property>
+          </item>
          </widget>
         </item>
         <item>
@@ -437,7 +637,7 @@ selection-background-color: #DCE4F1;</string>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
             <property name="text">
-             <string>Number of Planing Years</string>
+             <string>Number of Planning Years</string>
             </property>
            </widget>
           </item>
@@ -450,7 +650,7 @@ selection-background-color: #DCE4F1;</string>
              </size>
             </property>
             <property name="text">
-             <string>0</string>
+             <string>39.7</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -466,7 +666,7 @@ selection-background-color: #DCE4F1;</string>
              </size>
             </property>
             <property name="text">
-             <string>0</string>
+             <string>1.2</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -476,7 +676,7 @@ selection-background-color: #DCE4F1;</string>
           <item row="2" column="2">
            <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>Overtime Hours of Labor</string>
+             <string>overtime hour cost</string>
             </property>
            </widget>
           </item>
@@ -489,7 +689,7 @@ selection-background-color: #DCE4F1;</string>
              </size>
             </property>
             <property name="text">
-             <string>0</string>
+             <string>4000</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -515,7 +715,7 @@ selection-background-color: #DCE4F1;</string>
              </size>
             </property>
             <property name="text">
-             <string>0</string>
+             <string>8</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -607,6 +807,39 @@ selection-background-color: #DCE4F1;</string>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
+           <widget class="QLabel" name="input_constraint_2">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+                                                        QLabel {
+                                                        color: #77a2ba;
+                                                        }
+                                                    </string>
+            </property>
+            <property name="text">
+             <string>Input Constraint</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>- Negative numbers are not allowed for insertion.
+- The following variables must not be zero: First Production Age, Last Sell Age, Birthrate, Land in Animal Needs, Initial Number, Price, Land Capacity, Number of Planning Years.
+- The values provided are just for illustrative purposes.
+- The following variables must be integers : First Production Age, Last Sell Age, Min Final Animals, Max Final Animals, Number of Planning Years
+</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="graph_title">
             <property name="font">
              <font>
@@ -626,63 +859,20 @@ selection-background-color: #DCE4F1;</string>
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="plan_display"/>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
-            <item>
-             <spacer name="verticalSpacer">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QLabel" name="input_constraint_2">
-              <property name="font">
-               <font>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">
-                                                        QLabel {
-                                                        color: #77a2ba;
-                                                        }
-                                                    </string>
-              </property>
-              <property name="text">
-               <string>Input Constraint</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QTextEdit" name="textEdit">
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>80</height>
-               </size>
-              </property>
-              <property name="readOnly">
-               <bool>true</bool>
-              </property>
-              <property name="html">
-               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You can't insert negative numbers.&lt;br /&gt;The variables :          can't be zero.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <layout class="QVBoxLayout" name="plan_display"/>
           </item>
          </layout>
         </item>
