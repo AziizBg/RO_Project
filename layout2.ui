@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1004</width>
-    <height>958</height>
+    <height>984</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -101,6 +101,20 @@ margin-bottom: 15px;
       </property>
       <widget class="QWidget" name="leftPanel">
        <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>The values provided are just for illustrative purposes</string>
+          </property>
+         </widget>
+        </item>
         <item>
          <widget class="QLabel" name="node_input_title_2">
           <property name="font">
@@ -828,10 +842,16 @@ selection-background-color: #DCE4F1;</string>
           </item>
           <item>
            <widget class="QLabel" name="label_5">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="text">
              <string>- Negative numbers are not allowed for insertion.
 - The following variables must not be zero or none
-- The values provided are just for illustrative purposes.
 - The following variables must be integers : First Production Age, Last Sell Age, Min Final Animals, Max Final Animals, Number of Planning Years
 </string>
             </property>
