@@ -34,7 +34,7 @@ class MyApp(QMainWindow):
         # return_home_button2 = layout2_app.get_return_home_button()
         print(return_home_button)
         # Connectez le signal clicked du bouton returnHome à redirect_to_layout avec l'indice 0
-        return_home_button.clicked.connect(lambda: BaseWindow.redirect_to_layout(LayoutApp,0))
+        return_home_button.clicked.connect(lambda: BaseWindow.redirect_to_layout(self,0))
         # return_home_button2.clicked.connect(lambda: BaseWindow.redirect_to_layout(LayoutApp2,0))
         
 if __name__ == "__main__":

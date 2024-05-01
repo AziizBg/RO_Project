@@ -143,52 +143,148 @@
       <widget class="QWidget" name="left_widget">
        <layout class="QVBoxLayout" name="pb1_left_layout">
         <item>
-         <widget class="QLabel" name="pb1_title">
-          <property name="font">
-           <font>
-            <pointsize>15</pointsize>
-            <weight>75</weight>
-            <italic>false</italic>
-            <bold>true</bold>
-            <strikeout>false</strikeout>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: #6892ad;</string>
-          </property>
-          <property name="text">
-           <string>Problème 1 : Plus court chemin avec contraintes d'horaires</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignLeading</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <spacer name="verticalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="pb1_title">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <weight>75</weight>
+              <italic>false</italic>
+              <bold>true</bold>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #6892ad;</string>
+            </property>
+            <property name="text">
+             <string>Problème 1 : Plus court chemin avec contraintes d'horaires</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading</set>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="pb1_desc">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>150</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #262626;margin-left:10px;</string>
+            </property>
+            <property name="text">
+             <string>Un agriculteur possède un troupeau d'animaux comprenant des adultes et des jeunes. Chaque animal a besoin d'une certaine quantité de terrain et génère des revenus par an grâce à la production de produits comme le lait ou les œufs. Les animaux se reproduisent chaque année, avec une partie de la progéniture vendue peu après la naissance. Les animaux sont vendus à un certain âge, en tenant compte des décès annuels chez les adultes et les jeunes. La ferme a une capacité d'hébergement maximale, et il est possible d'ajouter des logements supplémentaires. En plus de l'élevage, la ferme produit deux types de grains, chacun ayant un rendement différent par hectare. Ces grains peuvent être achetés et vendus à des prix différents par tonne. La ferme nécessite également de la main-d'œuvre pour la production animale et la culture des grains. L'agriculteur a également la possibilité de contracter un prêt pour financer les dépenses en capital, avec un taux d'intérêt annuel donné. Les paiements de prêt sont remboursés annuellement. L'objectif de l'agriculteur est de maximiser ses bénéfices tout en respectant certaines contraintes, telles que maintenir le nombre total d'animaux dans une plage donnée et limiter l'augmentation ou la réduction du troupeau. Le défi consiste à élaborer un plan pour les années à venir qui optimise les bénéfices de l'agriculteur tout en tenant compte des contraintes de capacité, des coûts de main-d'œuvre, des revenus de la vente d'animaux et de grains, ainsi que des remboursements de prêt.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
-         <widget class="QLabel" name="pb1_desc">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
+         <spacer name="verticalSpacer_11">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
           </property>
-          <property name="styleSheet">
-           <string notr="true">color: #262626;margin-left:10px;</string>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
           </property>
-          <property name="text">
-           <string>Le problème du plus court chemin est un problème classique de la recherche opérationnelle. Il consiste à trouver le chemin le plus court entre deux points d'un graphe pondéré. Dans notre cas, nous avons ajouté des contraintes d'horaires pour rendre le problème plus réaliste.</string>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="pb2_title">
+            <property name="font">
+             <font>
+              <pointsize>15</pointsize>
+              <weight>75</weight>
+              <italic>false</italic>
+              <bold>true</bold>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #6892ad;</string>
+            </property>
+            <property name="text">
+             <string>Problème 2 : Planification Agricole avec contraintes </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading</set>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="pb2_desc">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: #262626;margin-left:10px;</string>
+            </property>
+            <property name="text">
+             <string>Un agriculteur possède un troupeau d'animaux comprenant des adultes et des jeunes. Chaque animal a besoin d'une certaine quantité de terrain et génère des revenus par an grâce à la production de produits comme le lait ou les œufs. Les animaux se reproduisent chaque année, avec une partie de la progéniture vendue peu après la naissance. Les animaux sont vendus à un certain âge, en tenant compte des décès annuels chez les adultes et les jeunes. La ferme a une capacité d'hébergement maximale, et il est possible d'ajouter des logements supplémentaires. En plus de l'élevage, la ferme produit deux types de grains, chacun ayant un rendement différent par hectare. Ces grains peuvent être achetés et vendus à des prix différents par tonne. La ferme nécessite également de la main-d'œuvre pour la production animale et la culture des grains. L'agriculteur a également la possibilité de contracter un prêt pour financer les dépenses en capital, avec un taux d'intérêt annuel donné. Les paiements de prêt sont remboursés annuellement. L'objectif de l'agriculteur est de maximiser ses bénéfices tout en respectant certaines contraintes, telles que maintenir le nombre total d'animaux dans une plage donnée et limiter l'augmentation ou la réduction du troupeau. Le défi consiste à élaborer un plan pour les années à venir qui optimise les bénéfices de l'agriculteur tout en tenant compte des contraintes de capacité, des coûts de main-d'œuvre, des revenus de la vente d'animaux et de grains, ainsi que des remboursements de prêt.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="right_widget">
        <layout class="QVBoxLayout" name="pb1_right_layout">
+        <item>
+         <spacer name="verticalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
         <item>
          <widget class="QPushButton" name="pb1Button">
           <property name="font">
@@ -219,77 +315,19 @@
           </property>
          </widget>
         </item>
-       </layout>
-      </widget>
-     </widget>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_6">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QSplitter" name="pb2_splitter">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <widget class="QWidget" name="left_widget">
-       <layout class="QVBoxLayout" name="pb2_left_layout">
         <item>
-         <widget class="QLabel" name="pb2_title">
-          <property name="font">
-           <font>
-            <pointsize>15</pointsize>
-            <weight>75</weight>
-            <italic>false</italic>
-            <bold>true</bold>
-            <strikeout>false</strikeout>
-           </font>
+         <spacer name="verticalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
           </property>
-          <property name="styleSheet">
-           <string notr="true">color: #6892ad;</string>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
           </property>
-          <property name="text">
-           <string>Problème 2 : Problème de sac à dos</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignLeading</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
+         </spacer>
         </item>
-        <item>
-         <widget class="QLabel" name="pb2_desc">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: #262626;margin-left:10px;</string>
-          </property>
-          <property name="text">
-           <string>Le problème du sac à dos est un problème classique de l'optimisation combinatoire. Il consiste à remplir un sac à dos avec des objets de différentes valeurs et poids, de manière à maximiser la valeur totale des objets tout en respectant la capacité du sac. Ce problème est souvent utilisé pour illustrer les concepts de programmation dynamique et de résolution de problèmes d'optimisation.</string>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="right_widget">
-       <layout class="QVBoxLayout" name="pb2_right_layout">
         <item>
          <widget class="QPushButton" name="pb2Button">
           <property name="font">
@@ -320,9 +358,35 @@
           </property>
          </widget>
         </item>
+        <item>
+         <spacer name="verticalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
        </layout>
       </widget>
      </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_6">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
     </item>
     <item>
      <spacer name="verticalSpacer">
@@ -357,7 +421,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>929</width>
+     <width>1200</width>
      <height>46</height>
     </rect>
    </property>

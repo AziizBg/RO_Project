@@ -80,27 +80,16 @@ def solve_farming_problem(farming):
     regular_time_cost = farming['regular_time_cost']
     installment = farming['installment']
 
-    # Printing the values to verify
-    print("animals:", animals)
-    print("animals_needs:", animals_needs)
-    print("capacity:", capacity)
-    print("seeds:", seeds)
-    print("lands:", lands)
-    print("years_number:", years_number)
-    print("overtime_cost:", overtime_cost)
-    print("regular_time_cost:", regular_time_cost)
-    print("installment:", installment)
+
 
 
     #1. years = [1,2,3,4,5, 6, 7, 8]
     years_number = farming['years_number'] # number of years given by the user
     years = [i for i in range(1, years_number+1)] # plan years given by the user
-    print("years: ", years)
 
     #2. lands = [1,2,3,4] 
     lands_number = len(farming['lands']['area']) # number of land types given by the user
     lands = [i for i in range(1, lands_number+1)] # land types given by the user
-    print("lands: ", lands)
 
     #3. animals 
     #animal_ages = [2,3,4,5,6,7,8,9,10,11] # animal ages (before having to sell them) given by the user: from ... to ...
@@ -142,17 +131,7 @@ def solve_farming_problem(farming):
     animal_price = farming['animals_needs']['adult']['price'] # cow price
     #animal_cost = 100 #Yearly cost for supporting a cow.
     animal_cost = farming['animals_needs']['adult']['cost'] #Yearly cost for supporting a cow.
-    print("animal_ages: ", animal_ages)
-    print("possible ages: ", ages)
-    print("animal_labor: ", animal_labor)
-    print("animal_decay: ", animal_decay)
-    print("initial_animals_number: ", initial_animals_number)
-    print("min_final_animals: ", min_final_animals)
-    print("max_final_animals: ", max_final_animals)
-    print("animal_price: ", animal_price)
-    print("animal_yearly_income: ", animal_yearly_income)
-    print("birthrate: ", birthrate)
-    print("animal_cost: ", animal_cost)
+ 
 
 
     #3.2 heifers
@@ -168,12 +147,7 @@ def solve_farming_problem(farming):
     baby_animal_price = farming['animals_needs']['baby']['price'] # heifers price
     # baby_animal_cost = 50 #Yearly cost for supporting a heifer.
     baby_animal_cost = farming['animals_needs']['baby']['cost'] # Yearly cost for supporting a heifer.
-    print("baby_animal_land:", baby_animal_land)
-    print("baby_animal_labor:", baby_animal_labor)
-    print("baby_animal_decay:", baby_animal_decay)
-    print("initial_baby_animal_number:", initial_baby_animal_number)
-    print("baby_animal_price:", baby_animal_price)
-    print("baby_animal_cost:", baby_animal_cost) 
+  
     #} end of table 2
 
 
@@ -187,9 +161,7 @@ def solve_farming_problem(farming):
     land_cap = farming['capacity']['land'] # land capacity which is the maximum land that can be used for farming (in acres)
     # labor_cap = 5500/100.0
     labor_cap = farming['capacity']['labor'] # labor capacity which is the maximum labor that can be used for farming (in hours)
-    print("housing_cap: ", housing_cap)
-    print("land_cap: ", land_cap)
-    print("labor_cap: ", labor_cap)
+
     #} fin de tableau 3
 
 
@@ -207,8 +179,6 @@ def solve_farming_problem(farming):
     # seed1_yield_lands = {1:1.1, 2:0.9, 3:0.8, 4:0.65} 
     seed1_yield = farming['lands']['yield'] # yield of seed1 in land type i (in tons per acre) given by the user
 
-    print("seed1_area: ", seed1_area)
-    print("seed1_yield: ", seed1_yield)
     #} fin de tableau 4
 
 
@@ -227,13 +197,6 @@ def solve_farming_problem(farming):
     seed1_cost = farming['seeds']['seed1']['cost'] # Cost for buying a ton of grain
     # seed1_land_cost = 15 #Yearly cost for supporting an acre of land devoted to grain.
     seed1_land_cost = farming['seeds']['seed1']['land_cost'] #Yearly cost for supporting an acre of land devoted to grain.
-    print("seed1_area: ", seed1_area)
-    print("seed1_yield: ", seed1_yield)
-    print("seed1_intake: ", seed1_intake)
-    print("seed1_labor: ", seed1_labor)
-    print("seed1_price: ", seed1_price)
-    print("seed1_cost: ", seed1_cost)
-    print("seed1_land_cost: ", seed1_land_cost)
 
 
     #5.2. seed2 : soybeans
@@ -249,27 +212,18 @@ def solve_farming_problem(farming):
     seed2_cost = farming['seeds']['seed2']['cost'] # Cost for buying a ton of soybean
     # seed2_land_cost = 10 #Yearly cost for supporting an acre of land devoted to soybeans.
     seed2_land_cost = farming['seeds']['seed2']['land_cost'] #Yearly cost for supporting an acre of land devoted to soybeans.
-    print("seed2_yield: ", seed2_yield)
-    print("seed2_intake: ", seed2_intake)
-    print("seed2_labor: ", seed2_labor)
-    print("seed2_price: ", seed2_price)
-    print("seed2_cost: ", seed2_cost)
-    print("seed2_land_cost: ", seed2_land_cost)
     #} fin de tableau 5
 
 
     #6. labor cost
     #6.1. overtime_cost = 1,20 # Cost for getting an hour of overtime.
     overtime_cost = farming['overtime_cost'] # Cost for getting an hour of overtime.
-    print("overtime_cost: ", overtime_cost)
 
     #6.2. regular_time_cost = 4000 #Cost for having 5,500 hours of labor in regular time.
     regular_time_cost = farming['regular_time_cost'] #Cost for having labor_cap hours of labor in regular time.
-    print("regular_time_cost: ", regular_time_cost)
 
     #installment = 39.71 #Annual payment for each  $200  loan
     installment = farming['installment'] #Annual payment for each  $200  loan
-    print("installment: ", installment)
 
     model = gp.Model('Farming')
     seed2 = model.addVars(years, vtype=GRB.CONTINUOUS, name="seed2")
@@ -412,7 +366,7 @@ def solve_farming_problem(farming):
     # seed1_plan
 
 
-    rows = ["seed1ow", "Buy", "Sell"]
+    rows = ["seed1Grow", "Buy", "Sell"]
     columns = years.copy()
     seed2_plan = pd.DataFrame(columns=columns, index=rows, data=0.0)
 
