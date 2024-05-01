@@ -7,11 +7,11 @@ farming = {
     'animals': {
         'first_production_age': 2,
         'last_sell_age': 10,
+        # 'min_final_animals': 50,
+        # 'max_final_animals': 175,
         'min_final_animals': 50,
-        'max_final_animals': 175,
-#       'min_final_animals': 50000,
-#       'max_final_animals': 500000,
-        'animal_yearly_income': 370.0,
+        'max_final_animals': 500000,
+        'animal_yearly_income': 550,
         'birthrate': 1.1,
     },
     'animals_needs': {
@@ -176,32 +176,32 @@ def solve_farming_problem(farming):
                         # animals[year,1] 
                         gp.quicksum(animals[year,age] for age in ages) -
                         gp.quicksum(outlay[d] for d in years if d <= year)
-                        <= housing_cap for year in years), name="Housing_cap")
+                        <= housing_cap for year in years), name="Housing_cap_per_year")
 
     # 2.1 Food consumption(seed1): The amount of seed1 consumed by the animals should not exceed the amount of seed1 bought and grown.
     # sum(seed1_intake*animals(year,age)) <= seed1_buy(year) - seed1_sell(year) + sum(seed1(year,land))
     seed1Consumption = model.addConstrs((
                     gp.quicksum(seed1_intake*animals[year, age] for age in animal_ages)
                     <= seed1_buy[year] - seed1_sell[year] + seed1.sum(year, '*')
-                    for year in years), name="Seed1_consumption")
+                    for year in years), name="Seed1_consumption_capacity_per_year")
 
     # 2.2 Food consumption (seed2)
     seed2Consumption = model.addConstrs((
                     gp.quicksum(seed2_intake*animals[year, age] for age in animal_ages)
                     <= seed2_buy[year] - seed2_sell[year] + seed2[year]
-                    for year in years), name="Seed2_consumption")
+                    for year in years), name="Seed2_consumption_capacity_per_year")
 
     # 3. seed1 growing: The amount of seed1 grown in a land should not exceed the yield of the land.
     # seed1(year,land) <= seed1_yield[land]*seed1_area[land]
     seed1growing = model.addConstrs((seed1[year, land] <= seed1_yield[land]*seed1_area[land]
-                    for year in years for land in lands), name="Seed1_growing")
+                    for year in years for land in lands), name="Seed1_growing_land_capacity_per_year")
 
     # 4. Land capacity: The amount of land used for animals and seeds should not exceed the land capacity.
     # seed2[year]/seed2_yield + baby_animal_land*(newborn[year] + animals[year,[1, min-1]]) + sum(seed1[year,land]/seed1_yield[land]) + sum(animal_land*animals[year,age]) <= land_cap
     LandCap = model.addConstrs((seed2[year]/seed2_yield + baby_animal_land*sum(newborn[year] + animals[year,k] for k in range(1, animal_first_production_age))
                     + gp.quicksum((1/seed1_yield[land])*seed1[year, land] for land in lands)
                     + gp.quicksum(animal_land*animals[year, age] for age in animal_ages)
-                    <= land_cap for year in years), name="Land_capacity")
+                    <= land_cap for year in years), name="Land_capacity_per_year")
 
 
     # 5. Labor: The amount of labor used for animals and seeds should not exceed the labor capacity.
@@ -210,37 +210,37 @@ def solve_farming_problem(farming):
                     + gp.quicksum(animal_labor*animals[year, age] for age in animal_ages)
                     + gp.quicksum(seed1_labor/seed1_yield[land]*seed1[year,land] for land in lands)
                     + seed2_labor/seed2_yield*seed2[year] 
-                    <= labor_cap + overtime[year] for year in years), name="Labor")
+                    <= labor_cap + overtime[year] for year in years), name="Labor_capacity_per_age_land_year")
 
     # 6.1 Continuity1: The number of baby animals in year i should be equal to the number of baby animals in year i-1 multiplied by the baby decay rate.
     Continuity1 = model.addConstrs((animals[year,1] == (1-baby_animal_decay)*newborn[year-1] 
                     for year in years if year > min(years)),
-                    name="Continuity_a")
+                    name="Baby_animals_number_continuity_per_year")
 
     # 6.2 Continuity2: The number of first production age animals in year i should be equal to the number of first (production age animals-1) babies in year i-1 multiplied by the baby decay rate.
     Continuity2 = model.addConstrs((animals[year,animal_first_production_age] == (1-baby_animal_decay)*animals[year-1,animal_first_production_age-1] 
                     for year in years if year > min(years)),
-                    name="Continuity_b")
+                    name="Last_baby_age_animals_becoming_adults_per_year")
 
     # 6.3 Continuity3: The number of animals of age j in year i should be equal to the number of animals of age j+1 in year i-1 multiplied by the animal decay rate.
     Continuity3 = model.addConstrs((animals[year,age+1] == (1-animal_decay)*animals[year-1,age]
                     for year in years for age in animal_ages if year > min(years) and age < max(animal_ages)),
-                    name="Continuity_c")
+                    name="Animals_number_continuity_per_year_age")
 
     # 7. baby animals birth: The number of female baby animals born in year i should be equal to the number of female babies sold + kept to be raised in year i.
     baby_birth = model.addConstrs((newborn[year] + baby_animals_sell[year] 
                     == gp.quicksum(birthrate/2*animals[year,age] for age in animal_ages) for year in years)
-                    , name="Baby_animals_birth")
+                    , name="Baby_animals_birth_per_year")
 
     # 8. Final animals: The number of final animals in the last year should be between the minimum and maximum number of final animals.
-    FinalDairyanimals = model.addRange(gp.quicksum(animals[max(years), age] for age in animal_ages), 
-                                       min_final_animals, max_final_animals, name="Final_dairy_animals" )
+    FinalAnimals = model.addRange(gp.quicksum(animals[max(years), age] for age in animal_ages), 
+                                       min_final_animals, max_final_animals, name="Final_animals_number" )
 
     # 9. Initial conditions: the initial number of animals and babies
     InitialBabies = model.addConstrs((initial_baby_animal_number == animals[1, age] for age in range(1, animal_first_production_age)),
-                    name="Initial_conditions")
+                    name="Initial_babies_number_per_age")
     Initialanimals = model.addConstrs((initial_animals_number == animals[1, age] for age in ages if age >= animal_first_production_age),
-                    name="Initial_condition_animals")
+                    name="Initial_animals_number_per_age")
 
     # 10. Yearly profit
     YearlyProfit = model.addConstrs((profit[year]
@@ -262,15 +262,19 @@ def solve_farming_problem(farming):
 
     # Solve the model
     model.optimize()
+    constraints = []
     print("========================================================================================================")
     #print IIS if the model is infeasible
     if(model.status != GRB.OPTIMAL):
         model.computeIIS() # IIS: Irreducible Infeasible Set which is a subset of the constraints that are infeasible
         #print the infeasible constraints:
+        print("The model is infeasible. The following constraints are infeasible: ")
         for constr in model.getConstrs():
             if constr.IISConstr:
-                print(constr.ConstrName + " is infeasible")
-        return None, None, None, None, None
+                constraints.append(constr)
+            if constr.IISConstr:
+                print(constr.ConstrName + ", the difference is: ", int(constr.Pi)) # Pi: the shadow price of the constraint which means the amount of money that we should pay to make the constraint feasible
+        return None, None, None, None, None, constraints
 
     objective = model.objVal
 
@@ -326,23 +330,15 @@ def solve_farming_problem(farming):
             livestock_plan.loc["Raise", year] = np.round(newborn[year].x, 1)
     # livestock_plan
 
-    # if the model is infeasible, print the infeasible constraints
-    if(model.status != GRB.OPTIMAL):
-        model.computeIIS() # IIS: Irreducible Infeasible Set which is a subset of the constraints that are infeasible
-        #print the infeasible constraints:
-        for constr in model.getConstrs():
-            if constr.IISConstr:
-                print(constr.ConstrName)
-        return None, None, None, None, None
-    
+
 
     #return the results
-    return objective, finance_plan, seed1_plan, seed2_plan, livestock_plan
+    return objective, finance_plan, seed1_plan, seed2_plan, livestock_plan, constraints
 
 
 # calling the function to solve the problem
 
-[objective, finance_plan, seed1_plan, seed2_plan, livestock_plan] = solve_farming_problem(farming)
+[objective, finance_plan, seed1_plan, seed2_plan, livestock_plan, constraints] = solve_farming_problem(farming)
 if(objective != None):
     print("Objective: ", objective)
     print("Finance Plan: ")
@@ -354,8 +350,7 @@ if(objective != None):
     print("Livestock Plan: ")
     print(livestock_plan)
 else:
-    print("The model is infeasible")
-    print("The constraints that are infeasible are printed above.")
+    pass
 
 
 
