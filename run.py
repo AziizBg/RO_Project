@@ -27,22 +27,16 @@ class MyApp(QMainWindow):
         # connecter le clic du bouton pb2Button à la fonction de redirection avec l'indice 2
         self.pb2Button.clicked.connect(lambda: BaseWindow.redirect_to_layout(self,2))   
 
-        layout_app = LayoutApp()
-        layout2_app = LayoutApp2()
-        # Récupérez le bouton returnHome de LayoutApp
-        return_home_button = layout_app.get_return_home_button()
-        # return_home_button2 = layout2_app.get_return_home_button()
-        print(return_home_button)
-        # Connectez le signal clicked du bouton returnHome à redirect_to_layout avec l'indice 0
-        return_home_button.clicked.connect(lambda: BaseWindow.redirect_to_layout(self,0))
-        # return_home_button2.clicked.connect(lambda: BaseWindow.redirect_to_layout(LayoutApp2,0))
-        
+
+
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     widget = QtWidgets.QStackedWidget()
     mainwindow = MyApp()
-    layout = LayoutApp()
-    layout2 = LayoutApp2()
+    layout = LayoutApp(widget)
+    layout2 = LayoutApp2(widget)
     widget.addWidget(mainwindow)
     widget.addWidget(layout)
     widget.addWidget(layout2)

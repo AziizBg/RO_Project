@@ -17,13 +17,14 @@ import random
 
 
 class LayoutApp(QMainWindow):
-    def __init__(self):
+    def __init__(self,widget):
         super().__init__()
         ui_file_path = os.path.join(os.path.dirname(__file__), 'layout.ui')
         loadUi(ui_file_path, self)  # Load the UI file directly
         self.setWindowTitle("My PyQt Application")  # Set window title
         self.setup_menu()
         
+        self.returnHome.clicked.connect( lambda: widget.setCurrentIndex(0) )
 
         self.graph = {
             'nodes': {},
@@ -63,9 +64,6 @@ class LayoutApp(QMainWindow):
 
         # self.clear_button.setFixedHeight(
         #     self.clear_button.sizeHint().height()+10)
-
-    def get_return_home_button(self):
-        return self.returnHome
         
     def add_node(self):
 
