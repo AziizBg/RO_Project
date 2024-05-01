@@ -23,10 +23,14 @@ class LayoutApp2(QMainWindow):
 
         self.returnHome.clicked.connect( lambda: widget.setCurrentIndex(0) )
 
-        self.tableAdultAnimal.setColumnWidth(0, 160)
-        self.tableAdultAnimal.setColumnWidth(2, 150)
-        self.tableAdultAnimal.setColumnWidth(3, 150)
-        self.tableAdultAnimal.setColumnWidth(4, 160)
+        self.tableAdultAnimal.setColumnWidth(0, 150)
+        self.tableAdultAnimal.setColumnWidth(2, 140)
+        self.tableAdultAnimal.setColumnWidth(3, 140)
+        self.tableAdultAnimal.setColumnWidth(4, 155)
+        self.tableAdultAnimal.setColumnWidth(5, 160)
+        self.tableAnimalNeeds.setColumnWidth(1, 150)
+        self.tableSeeds.setColumnWidth(2, 150)
+        self.tableCapacity.setColumnWidth(2, 150)
 
         
          # Connectez le signal clicked du bouton add_lands_button à la fonction addLandRow
@@ -296,69 +300,93 @@ class inputs(QMainWindow):
             farming2['regular_time_cost'] = annual_cost_regular
             farming2['installment'] = additional_payment
 
+            seed1_yield_zero = False
+            # Check if seed1_yield is not zero
+            for key, value in seed1_yields.items():
+                if value == 0:
+                    seed1_yield_zero = True
+
             # Check if the user input is valid
             [test, keys] = inputs.test_positive_input(farming2)
             if test :
                 QMessageBox.warning(main_window, 'Warning', 'The following params must be positive: ' + ', '.join(keys))
             elif min_final_animals > max_final_animals:
                 QMessageBox.warning(main_window, 'Warning', 'The minimum number of final animals must be less than the maximum number of final animals')
-            elif animal_first_production_age == 0 or animal_last_sell_age == 0 or birthrate == 0 or animal_land ==0 or baby_animal_land ==0 or land_cap ==0 or initial_animals_number ==0 or initial_baby_animal_number ==0 or animal_price ==0 or baby_animal_price ==0 or number_of_years ==0 :
-                QMessageBox.warning(main_window, 'Warning', 'Some fields cannot be zero, Read the Input Constraints and check the mentioned fields')
-            else :
-                [objective, finance_plan, seed1_plan, seed2_plan, livestock_plan] = solve_farming_problem(farming2)
-                
-                # Update the QVBoxLayout with the results
-                
-                layout.setAlignment(Qt.AlignTop)
+            elif animal_first_production_age <= 1:
+                QMessageBox.warning(main_window, 'Warning', 'The animal first production age must be greater than 1')
+            elif seed1_yield_zero == True or animal_last_sell_age == 0 or max_final_animals == 0 or animal_yearly_income ==0 or birthrate == 0 or animal_land ==0 or baby_animal_land ==0 or land_cap ==0 or initial_animals_number ==0 or initial_baby_animal_number ==0 or animal_price ==0 or baby_animal_price ==0 or seed2_yield ==0 or seed2_price==0 or seed2_cost==0 or number_of_years ==0 :
+                QMessageBox.warning(main_window, 'Warning', 'The following variables must not be zero or none: \n Seed1 yield, Animal first production age, Animal last sell age, Maximum final animals, Animal yearly income, Birthrate, Animal land, Baby animal land, Land capacity, Initial number of adult animals, Initial number of baby animals, Animal price, Baby animal price, Seed2 yield, Seed2 price, Seed2 cost, Number of years')
+            else :    
+                [objective, finance_plan, seed1_plan, seed2_plan, livestock_plan, constraints] = solve_farming_problem(farming2)
+                if(objective != None): 
+                    # Update the QVBoxLayout with the results
+                    
+                    layout.setAlignment(Qt.AlignTop)
 
-                # Create a QFont object with bold style and fontsize 11
-                label_font = QFont()
-                label_font.setBold(True)
-                label_font.setPointSize(11)
+                    # Create a QFont object with bold style and fontsize 11
+                    label_font = QFont()
+                    label_font.setBold(True)
+                    label_font.setPointSize(11)
 
-                # Add labels with the specified font properties
-                objective_label = QLabel("Objective:")
-                objective_label.setFont(label_font)
-                layout.addWidget(objective_label)
+                    # Add labels with the specified font properties
+                    objective_label = QLabel("Objective:")
+                    objective_label.setFont(label_font)
+                    layout.addWidget(objective_label)
 
-                # Add the objective text (assuming it's a string)
-                objective_text_label = QLabel(str(objective))
-                layout.addWidget(objective_text_label)
+                    # Add the objective text (assuming it's a string)
+                    objective_text_label = QLabel(str(objective))
+                    layout.addWidget(objective_text_label)
 
-                # Add other labels in a similar manner
-                finance_plan_label = QLabel("Finance Plan:")
-                finance_plan_label.setFont(label_font)
-                layout.addWidget(finance_plan_label)
-                layout.addWidget(QTableView())
+                    # Add other labels in a similar manner
+                    finance_plan_label = QLabel("Finance Plan:")
+                    finance_plan_label.setFont(label_font)
+                    layout.addWidget(finance_plan_label)
+                    layout.addWidget(QTableView())
 
-                seed1_plan_label = QLabel("Seed1 Plan:")
-                seed1_plan_label.setFont(label_font)
-                layout.addWidget(seed1_plan_label)
-                layout.addWidget(QTableView())
+                    seed1_plan_label = QLabel("Seed1 Plan:")
+                    seed1_plan_label.setFont(label_font)
+                    layout.addWidget(seed1_plan_label)
+                    layout.addWidget(QTableView())
 
-                seed2_plan_label = QLabel("Seed2 Plan:")
-                seed2_plan_label.setFont(label_font)
-                layout.addWidget(seed2_plan_label)
-                layout.addWidget(QTableView())
+                    seed2_plan_label = QLabel("Seed2 Plan:")
+                    seed2_plan_label.setFont(label_font)
+                    layout.addWidget(seed2_plan_label)
+                    layout.addWidget(QTableView())
 
-                livestock_plan_label = QLabel("Livestock Plan:")
-                livestock_plan_label.setFont(label_font)
-                layout.addWidget(livestock_plan_label)
-                layout.addWidget(QTableView())
+                    livestock_plan_label = QLabel("Livestock Plan:")
+                    livestock_plan_label.setFont(label_font)
+                    layout.addWidget(livestock_plan_label)
+                    layout.addWidget(QTableView())
 
-                # Create PandasModel instances for each DataFrame
-                finance_model = PandasModel(finance_plan)
-                seed1_model = PandasModel(seed1_plan)
-                seed2_model = PandasModel(seed2_plan)
-                livestock_model = PandasModel(livestock_plan)
+                    # Create PandasModel instances for each DataFrame
+                    finance_model = PandasModel(finance_plan)
+                    seed1_model = PandasModel(seed1_plan)
+                    seed2_model = PandasModel(seed2_plan)
+                    livestock_model = PandasModel(livestock_plan)
 
-                # Set the models to the corresponding QTableView widgets
-                layout.itemAt(3).widget().setModel(finance_model)
-                layout.itemAt(5).widget().setModel(seed1_model)
-                layout.itemAt(7).widget().setModel(seed2_model)
-                layout.itemAt(9).widget().setModel(livestock_model)
+                    # Set the models to the corresponding QTableView widgets
+                    layout.itemAt(3).widget().setModel(finance_model)
+                    layout.itemAt(5).widget().setModel(seed1_model)
+                    layout.itemAt(7).widget().setModel(seed2_model)
+                    layout.itemAt(9).widget().setModel(livestock_model)
+                else:
+                    # Display the constraints in the layout
+                    layout.setAlignment(Qt.AlignTop)
+                    label_font = QFont()
+                    label_font.setBold(True)
+                    label_font.setPointSize(11)
+
+                    constraints_text_label = QLabel("There is no Plan. The problem is infeasible. The constraints are:")
+                    layout.addWidget(constraints_text_label)
+                    constraints_label = QLabel("Constraints:")
+                    constraints_label.setFont(label_font)
+                    layout.addWidget(constraints_label)
+                    # extract the constraints from the constraints list
+                    for constraint in constraints:
+                        constraint_label = QLabel(str(constraint))
+                        layout.addWidget(constraint_label)
         except ValueError:
-            QMessageBox.warning(main_window, 'Warning', 'Please enter valid numbers in the input fields')
+            QMessageBox.warning(main_window, 'Warning', 'Please enter valid numbers in the input fields.\n Check the input constraints for the correct format.')
 
         
 

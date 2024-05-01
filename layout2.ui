@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>890</width>
-    <height>929</height>
+    <width>1004</width>
+    <height>958</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -73,7 +73,7 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>16</pointsize>
+        <pointsize>24</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -82,6 +82,7 @@
        <string notr="true">
                   QLabel {
                   color: #0b2b4f;
+margin-bottom: 15px;
                   }
               </string>
       </property>
@@ -132,7 +133,7 @@ selection-background-color: #DCE4F1;</string>
           </row>
           <column>
            <property name="text">
-            <string>First Production Age</string>
+            <string>First Production Age &gt; 1</string>
            </property>
           </column>
           <column>
@@ -152,12 +153,12 @@ selection-background-color: #DCE4F1;</string>
           </column>
           <column>
            <property name="text">
-            <string>Animal Yearly Income</string>
+            <string>Animal Yearly Income ($)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Birthrate</string>
+            <string>Birthrate (animal/year)</string>
            </property>
           </column>
           <item row="0" column="0">
@@ -229,17 +230,17 @@ selection-background-color: #DCE4F1;</string>
           </row>
           <column>
            <property name="text">
-            <string>Land</string>
+            <string>Land ( Hectar)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Labor</string>
+            <string>Labor (100Hours/year)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Decay</string>
+            <string>Decay( / ) ∈[0,1]</string>
            </property>
           </column>
           <column>
@@ -249,12 +250,12 @@ selection-background-color: #DCE4F1;</string>
           </column>
           <column>
            <property name="text">
-            <string>Price</string>
+            <string>Price($)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Cost</string>
+            <string>Cost($)</string>
            </property>
           </column>
           <item row="0" column="0">
@@ -351,17 +352,17 @@ selection-background-color: #DCE4F1;</string>
           </row>
           <column>
            <property name="text">
-            <string>Housing</string>
+            <string>Housing (animalNumber)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Land</string>
+            <string>Land (Hectar)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Labor</string>
+            <string>Labor (100Hours/year)</string>
            </property>
           </column>
           <item row="0" column="0">
@@ -418,32 +419,32 @@ selection-background-color: #DCE4F1;</string>
           </row>
           <column>
            <property name="text">
-            <string>yield</string>
+            <string>yield (Ton)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Intake</string>
+            <string>Intake (Ton)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Labor</string>
+            <string>Labor (100Hours/year)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Price</string>
+            <string>Price ($)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Cost</string>
+            <string>Cost ($)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Land Cost</string>
+            <string>Land Cost </string>
            </property>
           </column>
           <item row="0" column="0">
@@ -592,12 +593,12 @@ selection-background-color: #DCE4F1;</string>
           </row>
           <column>
            <property name="text">
-            <string>Seed1_Area</string>
+            <string>Seed1_Area(Hectar)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Seed1_yield</string>
+            <string>Seed1_yield(Ton)</string>
            </property>
           </column>
           <column>
@@ -676,7 +677,7 @@ selection-background-color: #DCE4F1;</string>
           <item row="2" column="2">
            <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>overtime hour cost</string>
+             <string>overtime hour cost ($)</string>
             </property>
            </widget>
           </item>
@@ -829,7 +830,7 @@ selection-background-color: #DCE4F1;</string>
            <widget class="QLabel" name="label_5">
             <property name="text">
              <string>- Negative numbers are not allowed for insertion.
-- The following variables must not be zero: First Production Age, Last Sell Age, Birthrate, Land in Animal Needs, Initial Number, Price, Land Capacity, Number of Planning Years.
+- The following variables must not be zero or none
 - The values provided are just for illustrative purposes.
 - The following variables must be integers : First Production Age, Last Sell Age, Min Final Animals, Max Final Animals, Number of Planning Years
 </string>
@@ -859,22 +860,22 @@ selection-background-color: #DCE4F1;</string>
            </widget>
           </item>
           <item>
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
            <layout class="QVBoxLayout" name="plan_display"/>
           </item>
          </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </widget>

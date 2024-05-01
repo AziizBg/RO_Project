@@ -271,9 +271,9 @@ def solve_farming_problem(farming):
         print("The model is infeasible. The following constraints are infeasible: ")
         for constr in model.getConstrs():
             if constr.IISConstr:
-                constraints.append(constr)
+                constraints.append(constr.ConstrName)
             if constr.IISConstr:
-                print(constr.ConstrName + ", the difference is: ", int(constr.Pi)) # Pi: the shadow price of the constraint which means the amount of money that we should pay to make the constraint feasible
+                print(constr.ConstrName ) # Pi: the shadow price of the constraint which means the amount of money that we should pay to make the constraint feasible
         return None, None, None, None, None, constraints
 
     objective = model.objVal
@@ -336,21 +336,21 @@ def solve_farming_problem(farming):
     return objective, finance_plan, seed1_plan, seed2_plan, livestock_plan, constraints
 
 
-# calling the function to solve the problem
+# # calling the function to solve the problem
 
-[objective, finance_plan, seed1_plan, seed2_plan, livestock_plan, constraints] = solve_farming_problem(farming)
-if(objective != None):
-    print("Objective: ", objective)
-    print("Finance Plan: ")
-    print(finance_plan)
-    print("Seed1 Plan: amount of seed1 to gorw in each land type in each year + amount to sell and buy ")
-    print(seed1_plan)
-    print("Seed2 Plan: ")
-    print(seed2_plan)
-    print("Livestock Plan: ")
-    print(livestock_plan)
-else:
-    pass
+# [objective, finance_plan, seed1_plan, seed2_plan, livestock_plan, constraints] = solve_farming_problem(farming)
+# if(objective != None):
+#     print("Objective: ", objective)
+#     print("Finance Plan: ")
+#     print(finance_plan)
+#     print("Seed1 Plan: amount of seed1 to gorw in each land type in each year + amount to sell and buy ")
+#     print(seed1_plan)
+#     print("Seed2 Plan: ")
+#     print(seed2_plan)
+#     print("Livestock Plan: ")
+#     print(livestock_plan)
+# else:
+#     pass
 
 
 
