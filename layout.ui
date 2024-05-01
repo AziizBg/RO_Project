@@ -70,7 +70,7 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>16</pointsize>
+        <pointsize>24</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -336,6 +336,12 @@
           </property>
           <item>
            <widget class="QPushButton" name="calculate_button">
+            <property name="maximumSize">
+                <size>
+                 <width>250</width>
+                 <height>16777215</height>
+                </size>
+            </property>
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -366,6 +372,12 @@
           </item>
           <item>
            <widget class="QPushButton" name="clear_button">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property> 
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -377,7 +389,7 @@
             <property name="styleSheet">
              <string notr="true">
                                                         QPushButton {
-                                                        background-color: #4a9fab;
+                                                        background-color: #ff4151;
                                                         border: none;
                                                         color: white;
                                                         padding: 5px ;
@@ -385,7 +397,7 @@
                                                         height: 35px;
                                                         }
                                                         QPushButton:hover {
-                                                        background-color: #3e858f;
+                                                        background-color: #f0505d;
                                                         }
                                                     </string>
             </property>
