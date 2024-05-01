@@ -9,6 +9,8 @@ farming = {
         'last_sell_age': 10,
         'min_final_animals': 50,
         'max_final_animals': 175,
+#       'min_final_animals': 50000,
+#       'max_final_animals': 500000,
         'animal_yearly_income': 370.0,
         'birthrate': 1.1,
     },
@@ -256,11 +258,21 @@ def solve_farming_problem(farming):
                 for year in years), name="Yearly_profit")
 
     # Objective function: maximize the total profit over the years:
-
     model.setObjective(gp.quicksum(profit[year] - installment*(year+years_number-1)*outlay[year] for year in years), GRB.MAXIMIZE)
 
+    # Solve the model
     model.optimize()
-    objective = model.getObjective().getValue()
+    print("========================================================================================================")
+    #print IIS if the model is infeasible
+    if(model.status != GRB.OPTIMAL):
+        model.computeIIS() # IIS: Irreducible Infeasible Set which is a subset of the constraints that are infeasible
+        #print the infeasible constraints:
+        for constr in model.getConstrs():
+            if constr.IISConstr:
+                print(constr.ConstrName + " is infeasible")
+        return None, None, None, None, None
+
+    objective = model.objVal
 
     #Analysis: 
     #1. finance_plan:
@@ -314,16 +326,37 @@ def solve_farming_problem(farming):
             livestock_plan.loc["Raise", year] = np.round(newborn[year].x, 1)
     # livestock_plan
 
+    # if the model is infeasible, print the infeasible constraints
+    if(model.status != GRB.OPTIMAL):
+        model.computeIIS() # IIS: Irreducible Infeasible Set which is a subset of the constraints that are infeasible
+        #print the infeasible constraints:
+        for constr in model.getConstrs():
+            if constr.IISConstr:
+                print(constr.ConstrName)
+        return None, None, None, None, None
+    
+
     #return the results
     return objective, finance_plan, seed1_plan, seed2_plan, livestock_plan
 
 
 # calling the function to solve the problem
+
 [objective, finance_plan, seed1_plan, seed2_plan, livestock_plan] = solve_farming_problem(farming)
-print("Objective: ", objective)
-print("Finance Plan: ", finance_plan)
-print("Seed1 Plan: amount of seed1 to gorw in each land type in each year + amount to sell and buy ", seed1_plan)
-print("Seed2 Plan: ", seed2_plan)
-print("Livestock Plan: ", livestock_plan)
+if(objective != None):
+    print("Objective: ", objective)
+    print("Finance Plan: ")
+    print(finance_plan)
+    print("Seed1 Plan: amount of seed1 to gorw in each land type in each year + amount to sell and buy ")
+    print(seed1_plan)
+    print("Seed2 Plan: ")
+    print(seed2_plan)
+    print("Livestock Plan: ")
+    print(livestock_plan)
+else:
+    print("The model is infeasible")
+    print("The constraints that are infeasible are printed above.")
+
+
 
 
