@@ -29,8 +29,10 @@ class LayoutApp2(QMainWindow):
         self.tableAdultAnimal.setColumnWidth(4, 155)
         self.tableAdultAnimal.setColumnWidth(5, 160)
         self.tableAnimalNeeds.setColumnWidth(1, 150)
+        self.tableAnimalNeeds.setColumnWidth(3, 150)
         self.tableSeeds.setColumnWidth(2, 150)
         self.tableCapacity.setColumnWidth(2, 150)
+        self.tableCapacity.setColumnWidth(0, 150)
 
         
          # Connectez le signal clicked du bouton add_lands_button à la fonction addLandRow
@@ -343,12 +345,12 @@ class inputs(QMainWindow):
                     layout.addWidget(finance_plan_label)
                     layout.addWidget(QTableView())
 
-                    seed1_plan_label = QLabel("Seed1 Plan:")
+                    seed1_plan_label = QLabel("Seed1 Plan: Tons/(Year,Land)")
                     seed1_plan_label.setFont(label_font)
                     layout.addWidget(seed1_plan_label)
                     layout.addWidget(QTableView())
 
-                    seed2_plan_label = QLabel("Seed2 Plan:")
+                    seed2_plan_label = QLabel("Seed2 Plan: Tons/Year")
                     seed2_plan_label.setFont(label_font)
                     layout.addWidget(seed2_plan_label)
                     layout.addWidget(QTableView())

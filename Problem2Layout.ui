@@ -259,7 +259,7 @@ selection-background-color: #DCE4F1;</string>
           </column>
           <column>
            <property name="text">
-            <string>Initial Number</string>
+            <string>Initial Number per age</string>
            </property>
           </column>
           <column>
@@ -433,7 +433,7 @@ selection-background-color: #DCE4F1;</string>
           </row>
           <column>
            <property name="text">
-            <string>yield (Ton)</string>
+            <string>yield (Ton/Hectar)</string>
            </property>
           </column>
           <column>
@@ -612,7 +612,7 @@ selection-background-color: #DCE4F1;</string>
           </column>
           <column>
            <property name="text">
-            <string>Seed1_yield(Ton)</string>
+            <string>Seed1_yield(Ton/Hectar)</string>
            </property>
           </column>
           <column>
@@ -714,7 +714,7 @@ selection-background-color: #DCE4F1;</string>
           <item row="2" column="0">
            <widget class="QLabel" name="label_2">
             <property name="text">
-             <string>Annual Cost of Regular Labor</string>
+             <string>Annual Cost of Regular Labor ($)</string>
             </property>
            </widget>
           </item>

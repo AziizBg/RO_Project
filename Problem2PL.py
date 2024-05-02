@@ -9,9 +9,9 @@ farming = {
         'last_sell_age': 10,
         # 'min_final_animals': 50,
         # 'max_final_animals': 175,
-        'min_final_animals': 50,
+        'min_final_animals': 50000,
         'max_final_animals': 500000,
-        'animal_yearly_income': 550,
+        'animal_yearly_income': 200,
         'birthrate': 1.1,
     },
     'animals_needs': {
