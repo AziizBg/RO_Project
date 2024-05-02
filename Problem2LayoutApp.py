@@ -1,6 +1,6 @@
 import sys
 import os
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QPushButton,QVBoxLayout, QLabel, QTableView
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QPushButton,QVBoxLayout, QLabel, QTableView, QWidget, QScrollArea
 from PyQt5.uic import loadUi
 from PyQt5.QtCore import Qt, QAbstractTableModel
 from PyQt5.QtWidgets import QMessageBox
@@ -378,13 +378,30 @@ class inputs(QMainWindow):
 
                     constraints_text_label = QLabel("There is no Plan. The problem is infeasible. The constraints are:")
                     layout.addWidget(constraints_text_label)
+
+                    # Create a scroll area to contain the constraints
+                    scroll_area = QScrollArea()
+                    scroll_area.setWidgetResizable(True)
+
+                    scroll_widget = QWidget()
+                    scroll_layout = QVBoxLayout(scroll_widget)
+
+                    # Add constraints label to the scroll layout
                     constraints_label = QLabel("Constraints:")
                     constraints_label.setFont(label_font)
-                    layout.addWidget(constraints_label)
-                    # extract the constraints from the constraints list
+                    scroll_layout.addWidget(constraints_label)
+
+                    # Extract the constraints from the constraints list and add them to the scroll layout
                     for constraint in constraints:
                         constraint_label = QLabel(str(constraint))
-                        layout.addWidget(constraint_label)
+                        scroll_layout.addWidget(constraint_label)
+
+                    # Set the scroll widget
+                    scroll_area.setWidget(scroll_widget)
+
+                    # Add the scroll area to the main layout
+                    layout.addWidget(scroll_area)
+
         except ValueError:
             QMessageBox.warning(main_window, 'Warning', 'Please enter valid numbers in the input fields.\n Check the input constraints for the correct format.')
 
