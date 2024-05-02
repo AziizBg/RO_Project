@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QMessageBox
 import uuid
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QInputDialog
-from problem2 import solve_farming_problem 
+from Problem2PL import solve_farming_problem 
 import pandas as pd
 from PyQt5.QtGui import QFont
 
@@ -15,7 +15,7 @@ from PyQt5.QtGui import QFont
 class LayoutApp2(QMainWindow):
     def __init__(self,widget):
         super().__init__()
-        ui_file_path = os.path.join(os.path.dirname(__file__), 'layout2.ui')
+        ui_file_path = os.path.join(os.path.dirname(__file__), 'Problem2Layout.ui')
         loadUi(ui_file_path, self)  # Chargez le fichier UI directement
 
         # set the splitter evenly in two halfs 

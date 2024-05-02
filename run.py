@@ -8,8 +8,8 @@ import uuid
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QInputDialog
 from PyQt5.QtWidgets import QTableWidgetItem
-from LayoutApp import LayoutApp
-from LayoutApp2 import LayoutApp2
+from Problem1LayoutApp import LayoutApp
+from Problem2LayoutApp import LayoutApp2
 
 class BaseWindow(QMainWindow):
     def redirect_to_layout(self, index):

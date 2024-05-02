@@ -1,7 +1,7 @@
 import sys
 import uuid
 import os
-from plne import validate_graph, solve_shortest_path
+from Problem1PLNE import validate_graph, solve_shortest_path
 
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtCore
@@ -19,7 +19,7 @@ import random
 class LayoutApp(QMainWindow):
     def __init__(self,widget):
         super().__init__()
-        ui_file_path = os.path.join(os.path.dirname(__file__), 'layout.ui')
+        ui_file_path = os.path.join(os.path.dirname(__file__), 'Problem1Layout.ui')
         loadUi(ui_file_path, self)  # Load the UI file directly
         self.setWindowTitle("My PyQt Application")  # Set window title
         self.setup_menu()
